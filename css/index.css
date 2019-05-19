@@ -138,6 +138,12 @@ h2 {
 p {
   margin: 2rem 0;
 }
+.hidden {
+  display: none!important;
+}
+.visible {
+  display: block!important;
+}
 .button {
   display: flex;
   align-items: center;
@@ -157,6 +163,26 @@ p {
   background-color: dodgerblue;
   color: white;
 }
+@media (max-width: 720px) {
+  .expandedNavUnderlay {
+    height: 100vh!important;
+  }
+  .expandedNavUnderlay .nav-close-btn {
+    display: block!important;
+  }
+}
+@media (max-width: 720px) {
+  .expandedNav {
+    height: 60%;
+    margin: 20% 0;
+  }
+  .expandedNav .hamburger-button {
+    display: none!important;
+  }
+  .expandedNav a {
+    display: flex;
+  }
+}
 body {
   width: 100%;
   margin: 0 auto;
@@ -170,6 +196,24 @@ body {
   position: fixed;
   height: 5.6rem;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-underlay .nav-close-btn {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 56px;
+  text-decoration: none;
+  margin: 40px 64px;
+  color: white;
+  display: none;
+}
+@media (max-width: 720px) {
+  .nav-underlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 80px;
+    transition: height 0.4s;
+  }
 }
 nav {
   z-index: 2;
@@ -184,12 +228,43 @@ nav a {
   font-family: "Lato", sans-serif;
   color: white;
   transition: color 0.6s;
+  height: 2rem;
+}
+nav a img {
+  height: 2rem;
 }
 nav a:hover {
   color: dodgerblue;
 }
+nav .hamburger-button {
+  display: none!important;
+}
+@media (max-width: 1300px) {
+  nav {
+    width: 80%;
+  }
+}
+@media (max-width: 720px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    transition: margin 0.5s;
+    transition: height 0.5s;
+  }
+  nav .hamburger-button {
+    display: block!important;
+  }
+  nav a {
+    margin: 1.4rem auto;
+    display: none;
+  }
+  nav a:first-of-type {
+    display: block;
+  }
+}
 .top-section {
-  width: 100%;
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -201,7 +276,10 @@ nav a:hover {
   display: block;
 }
 .top-section .top-bg-img-container .top-bg-img {
+  object-fit: cover;
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
   z-index: -2;
 }
 .top-section .top-bg-overlay {
@@ -218,13 +296,24 @@ nav a:hover {
   justify-content: center;
   z-index: 1;
   position: absolute;
-  width: 28%;
+  width: 50%;
+  max-width: 500px;
   height: 280px;
   border-radius: 2px;
   background-color: white;
   box-shadow: 0 0 10px black;
   font-family: "Lato", sans-serif;
   text-align: center;
+}
+@media (max-width: 1300px) {
+  .top-section .heading {
+    width: 60%;
+  }
+}
+@media (max-width: 720px) {
+  .top-section .heading {
+    width: 80%;
+  }
 }
 .top-section .heading .subhead {
   margin: 30px 20px;
@@ -249,7 +338,8 @@ nav a:hover {
   color: white;
 }
 #contact div .article {
-  width: 85%;
+  width: 90%;
+  max-width: 750px;
 }
 #contact div .article .form {
   display: flex;
@@ -291,18 +381,38 @@ nav a:hover {
   min-height: 40px;
   max-height: 120px;
 }
+#contact div .article .form .form-row:last-of-type {
+  height: 100px;
+}
 section {
   display: flex;
   flex-direction: row;
   font-family: "Lato", sans-serif;
   align-items: center;
 }
+@media (max-width: 1300px) {
+  section {
+    flex-direction: column;
+  }
+}
 section div {
   width: 50%;
+}
+@media (max-width: 1300px) {
+  section div {
+    width: 100%;
+  }
 }
 section div .article {
   margin: auto;
   width: 70%;
+  max-width: 750px;
+}
+@media (max-width: 1300px) {
+  section div .article {
+    width: 90%;
+    margin: 4rem auto;
+  }
 }
 section .section-img {
   display: block;
@@ -311,6 +421,22 @@ section .section-img img {
   position: relative;
   width: 100%;
   height: 100%;
+}
+section #top-contact-img {
+  display: block!important;
+}
+@media (max-width: 1300px) {
+  section #top-contact-img {
+    display: none!important;
+  }
+}
+section #bottom-contact-img {
+  display: none!important;
+}
+@media (max-width: 1300px) {
+  section #bottom-contact-img {
+    display: block!important;
+  }
 }
 footer {
   background-color: rgba(0, 0, 0, 0.5);

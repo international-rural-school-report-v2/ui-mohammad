@@ -6,10 +6,14 @@
     rel="stylesheet"
   />
   <script src="./js/index.js" async></script>
+  <script src="./js/nav.js" async></script>
 </head>
 <body>
-  <div class="nav-underlay"></div>
+  <div class="nav-underlay">
+    <a href="##" class="nav-close-btn">X</a>
+  </div>
   <nav>
+    <a href="##" class="hamburger-button"><img src="./img/burger.png"></a>
     <a href="#">Home</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
@@ -51,7 +55,7 @@
     </div>
   </section>
   <section id="contact">
-    <div class="section-img">
+    <div class="section-img" id="top-contact-img" >
       <img src="./img/contact-teacher.jpg" />
     </div>
     <div>
@@ -95,6 +99,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="section-img hidden" id="bottom-contact-img" >
+        <img src="./img/contact-teacher.jpg" />
     </div>
   </section>
   <section id="team">

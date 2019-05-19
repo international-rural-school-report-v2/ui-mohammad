@@ -1,6 +1,7 @@
 @import "reset";
 @import "defaults";
 @import "mixins";
+@import "variables";
 
 body {
   width: 100%;
@@ -16,6 +17,26 @@ body {
   position: fixed;
   height: 5.6rem;
   background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: flex-end;
+
+  .nav-close-btn {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    font-size: 56px;
+    text-decoration: none;
+    margin: 40px 64px;
+    color: white;
+
+    display: none;
+  }
+
+  @media @mobile {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 80px;
+    transition: height 0.4s;
+  }
 }
 
 nav {
@@ -32,15 +53,50 @@ nav {
     color: white;
 
     transition: color 0.6s;
+
+    height: 2rem;
+
+    img {
+      height: 2rem;
+    }
   }
 
   a:hover {
     color: dodgerblue;
   }
+
+  .hamburger-button {
+    .hidden();
+  }
+  
+  @media @tablet {
+    width: 80%;
+  }
+
+  @media @mobile {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    transition: margin 0.5s;
+    transition: height 0.5s;
+
+    .hamburger-button {
+      .visible();
+    }
+
+    a {
+      margin: 1.4rem auto;
+      display: none;
+    }
+
+    a:first-of-type {
+      display: block;
+    }
+  }
 }
 
 .top-section {
-  width: 100%;
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -51,7 +107,10 @@ nav {
   .top-bg-img-container {
     display: block;
     .top-bg-img {
+      object-fit: cover;
       width: 100%;
+      height: 100vh;
+      overflow: hidden;
       z-index: -2;
     }
   }
@@ -63,7 +122,7 @@ nav {
     height: 100%;
     overflow: hidden;
   }
-
+  
   .heading {
     display: flex;
     flex-direction: column;
@@ -71,13 +130,22 @@ nav {
     justify-content: center;
     z-index: 1;
     position: absolute;
-    width: 28%;
+    width: 50%;
+    max-width: 500px;
     height: 280px;
     border-radius: 2px;
     background-color: white;
     box-shadow: 0 0 10px black;
     font-family: "Lato", sans-serif;
     text-align: center;
+
+    @media @tablet {
+      width: 60%;
+    }
+
+    @media @mobile {
+      width: 80%;
+    }
 
     .subhead {
       margin: 30px 20px;
@@ -91,8 +159,10 @@ nav {
 
 #contact {
   div {
+    
     .article {
-      width: 85%;
+      width: 90%;
+      max-width: 750px;
       .form {
         display: flex;
         flex-direction: column;
@@ -138,6 +208,10 @@ nav {
             }
           }
         }
+
+        .form-row:last-of-type{
+          height: 100px;
+        }
       }
     }
   }
@@ -149,11 +223,23 @@ section {
   font-family: "Lato", sans-serif;
   align-items: center;
 
+  @media @tablet {
+    flex-direction: column;
+  }
+
   div {
     width: 50%;
+    @media @tablet {
+      width: 100%;
+    }
     .article {
       margin: auto;
       width: 70%;
+      max-width: 750px;
+      @media @tablet {
+        width: 90%;
+        margin: 4rem auto;
+      }
     }
   }
 
@@ -164,6 +250,20 @@ section {
       position: relative;
       width: 100%;
       height: 100%;
+    }
+  }
+
+  #top-contact-img {
+    .visible();
+    @media @tablet {
+      .hidden();
+    }
+  }
+
+  #bottom-contact-img {
+    .hidden();
+    @media @tablet {
+      .visible();
     }
   }
 }

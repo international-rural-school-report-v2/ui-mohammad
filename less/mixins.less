@@ -20,3 +20,28 @@
   }
 }
 
+.expandedNavUnderlay {
+  @media @mobile {
+    height: 100vh!important;
+
+    .nav-close-btn {
+      display: block!important;
+    }
+  }
+}
+
+// Assign this class to nav
+.expandedNav {
+  @media @mobile {
+    height: 60%;
+    margin: 20% 0;
+
+    .hamburger-button {
+      .hidden();
+    }
+
+    a {
+      display: flex;
+    }
+  }
+}
