@@ -384,6 +384,9 @@ nav .hamburger-button {
 #contact div .article .form .form-row:last-of-type {
   height: 100px;
 }
+#contact div .article .form .form-row:last-of-type a {
+  align-self: flex-end;
+}
 section {
   display: flex;
   flex-direction: row;
