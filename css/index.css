@@ -171,6 +171,7 @@ p {
 @media (max-width: 720px) {
   .expandedNavUnderlay {
     height: 100vh!important;
+    transition: height 0.4s;
   }
   .expandedNavUnderlay .nav-close-btn {
     display: block!important;
