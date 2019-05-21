@@ -215,7 +215,7 @@ p {
 #team .team-members .team-member {
   text-align: center;
   width: 150px;
-  height: 300px;
+  height: 350px;
   justify-content: space-between;
 }
 #team .team-members .team-member .member-img {
@@ -228,6 +228,9 @@ p {
   border-radius: 50%;
   width: 150px;
   height: 150px;
+}
+#team .team-members .team-member a {
+  height: 30px;
 }
 @media (max-width: 1300px) {
   #team {
